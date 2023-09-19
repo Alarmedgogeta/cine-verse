@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 const RootLayout: FC<Props> = ({
