@@ -68,6 +68,8 @@
           "requireLast": false
         }
       }
-    ]
+    ],
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/naming-convention": "off"
   }
 }
