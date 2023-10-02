@@ -1,4 +1,5 @@
 import { type FC, Suspense } from 'react';
+import { type Metadata } from 'next';
 import Link from 'next/link';
 
 import DiscoverList from './components/discover-list';
@@ -7,6 +8,10 @@ import PopularList from './components/popular-list';
 import SkeletonList from './components/skeleton-list';
 import TopRatedList from './components/top-rated-list';
 import UpcomingList from './components/upcoming-list';
+
+export const metadata: Metadata = {
+  title: 'Cine verse - Movies',
+};
 
 const MoviesPage: FC = () => {
   return (
