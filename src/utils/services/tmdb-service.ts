@@ -9,11 +9,11 @@ export namespace TMDBService {
 
   export const Movies = {
     Genres: async (): Promise<{ genres: Genre[] }> => {
-      return await RequestService.GET<{ genres: Genre[] }>(`${BASE_API_URL}/genre/movie/list?language=en`);
+      return await RequestService.GET<{ genres: Genre[] }>(`${BASE_API_URL}/genre/movie/list`);
     },
 
     Discover: async (): Promise<TMDBPaginatedResponse<Movie[]>> => {
-      const data = await RequestService.GET<TMDBPaginatedResponse<Movie[]>>(`${BASE_API_URL}/discover/movie?language=en-US&page=1`);
+      const data = await RequestService.GET<TMDBPaginatedResponse<Movie[]>>(`${BASE_API_URL}/discover/movie`);
       return data;
     },
 
