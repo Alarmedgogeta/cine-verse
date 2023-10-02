@@ -15,7 +15,7 @@ const MovieGenreNames: FC<Props> = async ({ genre_ids }) => {
     .map(({ name }) => name);
 
   return (
-    <span className='mb-2 text-sm font-extralight'>
+    <span className='w-64 mb-2 text-sm font-extralight truncate'>
       {genresName.join(', ')}
     </span>
   );
