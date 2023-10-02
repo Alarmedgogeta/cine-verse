@@ -27,7 +27,7 @@ const MoviesPage: FC = () => {
       <section className='flex flex-col w-full space-y-4'>
         <div className='flex justify-between w-full'>
           <h2 className='text-2xl font-normal'>Now Playing</h2>
-          <Link href='movies/discover'>
+          <Link href='movies/now-playing'>
             See more
           </Link>
         </div>
@@ -40,7 +40,7 @@ const MoviesPage: FC = () => {
       <section className='flex flex-col w-full space-y-4'>
         <div className='flex justify-between w-full'>
           <h2 className='text-2xl font-normal'>Popular</h2>
-          <Link href='movies/discover'>
+          <Link href='movies/popular'>
             See more
           </Link>
         </div>
@@ -53,7 +53,7 @@ const MoviesPage: FC = () => {
       <section className='flex flex-col w-full space-y-4'>
         <div className='flex justify-between w-full'>
           <h2 className='text-2xl font-normal'>Top Rated</h2>
-          <Link href='movies/discover'>
+          <Link href='movies/top-rated'>
             See more
           </Link>
         </div>
@@ -66,7 +66,7 @@ const MoviesPage: FC = () => {
       <section className='flex flex-col w-full space-y-4'>
         <div className='flex justify-between w-full'>
           <h2 className='text-2xl font-normal'>Upcoming</h2>
-          <Link href='movies/discover'>
+          <Link href='movies/upcoming'>
             See more
           </Link>
         </div>
