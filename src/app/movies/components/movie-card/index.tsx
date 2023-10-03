@@ -32,7 +32,7 @@ const MovieCard: FC<Props> = ({
         width={256}
         height={192}
       />
-      <h4 className='text-base'>{title}</h4>
+      <h4 className='w-64 text-base truncate'>{title}</h4>
       <Suspense fallback={<SkeletonMovieGenreNames />}>
         <MovieGenreNames genre_ids={genre_ids} />
       </Suspense>
