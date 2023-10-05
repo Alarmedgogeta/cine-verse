@@ -1,5 +1,5 @@
 export namespace RequestService {
-  export const GET = async <T>(url: string, params?: unknown): Promise<T> => {
+  export const GET = async <T>(url: string | URL, params?: unknown): Promise<T> => {
     const response = await fetch(url, {
       method: 'GET',
       headers: {
