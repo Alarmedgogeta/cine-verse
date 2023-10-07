@@ -11,7 +11,7 @@ const orderByOptions: Array<Option<DiscoverSortBy>> = [
 
 const Filters: FC = () => {
   return (
-    <section className='flex flex-shrink-0 w-1/4 max-w-xs min-w-fit'>
+    <aside className='flex flex-shrink-0 w-1/4 max-w-xs min-w-fit'>
       <form className='flex flex-col'>
         <Select
           label='Order by'
@@ -19,7 +19,7 @@ const Filters: FC = () => {
           value={null}
         />
       </form>
-    </section>
+    </aside>
   );
 };
 

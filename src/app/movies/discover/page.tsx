@@ -14,7 +14,7 @@ const Discover: FC<Props> = async ({ searchParams }) => {
   const { results, page, total_pages } = await TMDBService.Movies.Discover(searchParams);
 
   return (
-    <section className='flex flex-col flex-1'>
+    <main className='flex flex-col flex-1'>
       <div className='flex justify-between w-full mb-4'>
         <h2 className='text-2xl font-normal'>Results</h2>
       </div>
@@ -39,7 +39,7 @@ const Discover: FC<Props> = async ({ searchParams }) => {
         ))}
       </div>
       <Pagination page={page} total_pages={total_pages} />
-    </section>
+    </main>
   );
 };
 
