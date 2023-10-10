@@ -13,7 +13,7 @@ interface Props {
 
 const DiscoverLayout: FC<Props> = ({ children }) => {
   return (
-    <div className='flex flex-1 w-full'>
+    <div className='flex flex-1 w-full space-x-8'>
       <Filters />
       {children}
     </div>

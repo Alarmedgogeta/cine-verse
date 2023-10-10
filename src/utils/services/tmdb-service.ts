@@ -16,6 +16,9 @@ export namespace TMDBService {
 
     Discover: async (filter?: DiscoverFilter): Promise<TMDBPaginatedResponse<Movie[]>> => {
       const url = new URL(`${BASE_API_URL}/discover/movie`);
+      if (filter?.sort_by) {
+        url.searchParams.set('sort_by', filter.sort_by);
+      }
       if (filter?.page) {
         url.searchParams.set('page', filter.page);
       }

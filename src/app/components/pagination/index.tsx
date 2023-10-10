@@ -5,6 +5,7 @@ import { twMerge } from 'tailwind-merge';
 interface Props {
   page: number;
   total_pages: number;
+  query?: Record<string, string | string[] | undefined>;
 }
 
 const MAX_PAGE = 500;
@@ -40,7 +41,7 @@ const getEndPaginationOption = (page: number, total_pages: number): number => {
   return page + 2;
 };
 
-const Pagination: FC<Props> = ({ page, total_pages }) => {
+const Pagination: FC<Props> = ({ page, total_pages, query }) => {
   const options: number[] = [];
 
   const startOption = getStartPaginationOption(page, total_pages);
@@ -55,7 +56,7 @@ const Pagination: FC<Props> = ({ page, total_pages }) => {
       <div className="-mt-px flex w-0 flex-1">
         {page > 3 && (
           <Link
-            href={{ query: { page: '1' } }}
+            href={{ query: { ...query, page: 1 } }}
             className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -65,7 +66,7 @@ const Pagination: FC<Props> = ({ page, total_pages }) => {
         )}
         {page > 3 && (
           <Link
-            href={{ query: { page: page - 1 } }}
+            href={{ query: { ...query, page: page - 1 } }}
             className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -78,7 +79,7 @@ const Pagination: FC<Props> = ({ page, total_pages }) => {
         {options.map((current) => (
           <Link
             key={`pagination-option-${current}`}
-            href={{ query: { page: current } }}
+            href={{ query: { ...query, page: current } }}
             className={twMerge(
               'inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700',
               current === page && 'inline-flex items-center border-t-2 border-indigo-500 px-4 pt-4 text-sm font-medium text-indigo-600',
@@ -91,7 +92,7 @@ const Pagination: FC<Props> = ({ page, total_pages }) => {
       <div className="-mt-px flex w-0 flex-1 justify-end">
         {page < total_pages && page < MAX_PAGE && (
           <Link
-            href={{ query: { page: page + 1 } }}
+            href={{ query: { ...query, page: page + 1 } }}
             className="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -101,7 +102,7 @@ const Pagination: FC<Props> = ({ page, total_pages }) => {
         )}
         {page < (total_pages - 2) && page < (MAX_PAGE - 2) && (
           <Link
-            href={{ query: { page: total_pages > MAX_PAGE ? MAX_PAGE : total_pages } }}
+            href={{ query: { ...query, page: total_pages > MAX_PAGE ? MAX_PAGE : total_pages } }}
             className="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

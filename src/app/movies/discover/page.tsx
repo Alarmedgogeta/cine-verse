@@ -38,7 +38,7 @@ const Discover: FC<Props> = async ({ searchParams }) => {
           </div>
         ))}
       </div>
-      <Pagination page={page} total_pages={total_pages} />
+      <Pagination page={page} total_pages={total_pages} query={searchParams as any} />
     </main>
   );
 };
